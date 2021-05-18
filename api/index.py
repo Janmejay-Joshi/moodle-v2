@@ -10,9 +10,7 @@ def index():
     :returns: TODO
 
     """
-    with open('./data/data.json', mode='r') as my_file:
-        text = loads(my_file.read())
-        return text
+        return "Instead Try /air_a or /air_b" 
 
 @app.route('/<branch>')
 def old(branch):
