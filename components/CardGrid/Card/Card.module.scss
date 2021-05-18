@@ -1,0 +1,55 @@
+@import "../../../styles/_variables";
+@import "./_Card_Animation";
+
+$animation-time: 0.4s;
+
+@mixin flexer {
+    flex: 0;
+    padding: 0.5rem;
+    opacity: 0;
+    color: $C-100;
+    background: rgba($C-900, 0.9);
+}
+
+.card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+    background: $C-300;
+    border-radius: 35px;
+    color: #000000;
+
+    min-width: 200px;
+    min-height: 450px;
+
+    padding: 1.5rem;
+
+    trasition: all 0.8s ease-in-out;
+
+    &_head {
+        height: 3rem;
+        padding: 5px;
+
+        font-size: 25px;
+        font-weight: bold;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &_body {
+        flex: auto;
+
+        ul {
+            list-style: none;
+            li {
+                padding: 5px;
+                &:last-child {
+                    color: red;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

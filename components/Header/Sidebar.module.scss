@@ -1,0 +1,81 @@
+@import "../../styles/_variables.scss";
+
+.sidebar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding-top: 71px;
+
+    width: 0;
+    height: 100vh;
+    z-index: 100;
+
+    background: linear-gradient(45deg, #151515, #292929);
+
+    transition: all 0.5s ease;
+
+    &_brand {
+        outline: solid thin white;
+        height: 3rem;
+    }
+
+    &_div1 {
+        outline: solid thin white;
+        height: 3rem;
+    }
+}
+
+.navbar {
+    position: fixed;
+    transition: width var(--transition-speed) ease;
+    background: linear-gradient($C-700, $C-900);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 10rem;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+    a {
+        display: flex;
+        align-items: center;
+        height: 5rem;
+        color: var(--text-primary);
+        text-decoration: none;
+        filter: grayscale(100%) opacity(0.7);
+
+        &:hover {
+            filter: grayscale(0%) opacity(1);
+            background-color: #222;
+        }
+    }
+    span {
+        display: none;
+        margin-left: 1rem;
+    }
+    svg {
+        width: 3rem;
+        min-width: 2rem;
+        margin: 0 1.5rem;
+    }
+}
+
+.sm-logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}

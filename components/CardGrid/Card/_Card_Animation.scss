@@ -1,0 +1,31 @@
+
+@keyframes sldein_head {
+    from {
+        opacity: 0;
+        flex-grow: 0;
+    }
+    to {
+        flex-grow: 0.3;
+        opacity: 1;
+    }
+}
+
+@keyframes sldein_info {
+    from {
+        opacity: 0;
+        flex-grow: 0;
+    }
+    to {
+        flex-grow: 0.7;
+        opacity: 1;
+    }
+}
+
+@keyframes card_grow {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.08);
+    }
+}
