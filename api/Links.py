@@ -5,7 +5,7 @@ import requests
 from lxml import html
 from datetime import datetime
 
-class Attendance():
+class Scraper():
 
     """
         Attendance class defing and allocating prerequisits which are required before marking attendance

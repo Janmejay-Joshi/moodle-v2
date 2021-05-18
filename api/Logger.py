@@ -1,7 +1,6 @@
 
 # load Required libraries and method
 
-import getopt, sys
 import Links 
 import requests
 from datetime import datetime
@@ -71,7 +70,7 @@ class Logger:
             with open('./metadata/metadata.json', mode='r') as my_file:
                 lectures = loads(my_file.read())[f"{self.branch}"]
 
-            Detail = Links.Attendance(session_requests)
+            Detail = Links.Scraper(session_requests)
             Details = {"last_updated":str(datetime.now()),"data":{"assignments":[],"quizes":[]}}
 
             for lecture in lectures:
