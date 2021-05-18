@@ -10,7 +10,7 @@ def index():
     :returns: TODO
 
     """
-        return "Instead Try /air_a or /air_b" 
+    return "Instead Try /air_a or /air_b" 
 
 @app.route('/<branch>')
 def old(branch):
