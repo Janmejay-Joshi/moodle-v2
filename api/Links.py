@@ -22,19 +22,24 @@ class Scraper():
 
         for Detail in Details:
             Time_Left = str(datetime.strptime(Detail[1],"%A, %d %B %Y, %I:%M %p") - now)[:-7]
-            if (Time_Left[0] != "-"):
-                Det = {
-                        "id": self.id,
-                        "subject":Title,
-                        "title":Detail[0],
-                        "due":Detail[1],
-                        "status":Detail[2],
-                        "link":Detail[3],
-                        "time_left": Time_Left,
-                        }
+            Det = {
+                    "id": self.id,
+                    "subject":Title,
+                    "title":Detail[0],
+                    "due_date":Detail[1],
+                    "status":Detail[2],
+                    "link":Detail[3],
+                    "time_left": Time_Left,
+                    }
 
-                Pretty.append(Det)
-                self.id += 1
+            if (Time_Left[0] == "-"):
+                Det["time_left"] = Det["time_left"][1:]
+                Det["due"]=True
+            else:
+                Det["due"]=False
+
+            Pretty.append(Det)
+            self.id += 1
 
         return Pretty;
 

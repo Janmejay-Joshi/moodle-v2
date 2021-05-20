@@ -1,6 +1,7 @@
 from flask import Flask
 from Logger import Logger
 from json import loads
+from apscheduler.schedulers.background import BackgroundScheduler
 
 app = Flask(__name__)
 
@@ -28,3 +29,16 @@ def latest(branch):
     branch = branch.upper()
     ret = Logger(branch)
     return  ret.Ret_Links()
+
+def refetch():
+    print("refetching")
+    branches = ["AIR_A","AIR_B"]
+
+    for branch in branches:
+        Logger(branch).Ret_Links()
+        print(f"refetched {branch}")
+
+scheduler = BackgroundScheduler()
+job = scheduler.add_job(refetch, 'interval', minutes=60)
+scheduler.start()
+
