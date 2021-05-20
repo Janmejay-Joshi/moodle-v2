@@ -70,20 +70,21 @@ class Logger:
             with open('./metadata/metadata.json', mode='r') as my_file:
                 lectures = loads(my_file.read())[f"{self.branch}"]
 
-            Detail = Links.Scraper(session_requests)
+            Detail_object = Links.Scraper(session_requests)
             Details = {"last_updated":str(datetime.now()),"data":{"assignments":[],"quizes":[]}}
 
             for lecture in lectures:
                 try:
-                    Details["data"]["assignments"].extend(Detail.Scrape(lecture))
+                    Details["data"]["assignments"].extend(Detail_object.Scrape(lecture))
                     print("\n+_+_+_+_+_+_+_+_+\n")
 
                 except Exception as e:
                     print(e)
             try:
-                Details["data"]["assignments"] = sorted(Details["data"]["assignments"],key = lambda k: int(k["time_left"].split(" ")[0]))
-            except Exception:
-                pass
+                Details["data"]["assignments"] = sorted(Details["data"]["assignments"],key =  lambda k: int(k["time_left"].split(" ")[0]) if len(k["time_left"].split(" ")) >= 3 else 0)
+                Details["data"]["assignments"] = sorted(Details["data"]["assignments"],key =  lambda k: k["due"])
+            except Exception as e:
+                print(e) 
 
             with open(f'data/data_{self.branch}.json', mode='w') as my_file:
                     my_file.write(dumps(Details))
