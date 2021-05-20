@@ -11,12 +11,17 @@ body {
     scroll-behavior: smooth;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
 a {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
 }
 
-* {
-    box-sizing: border-box;
-    cursor: default;
-}
