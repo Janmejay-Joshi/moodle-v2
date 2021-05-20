@@ -11,6 +11,7 @@ const CardGrid = ({ details }) => {
                         subject={detail.subject}
                         time_left={detail.time_left}
                         status={detail.status}
+                        due_date={detail.due_date}
                         due={detail.due}
                         key={detail.id}
                         link={detail.link}
