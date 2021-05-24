@@ -8,9 +8,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/', defaults={'path': ''})
-
-@app.route('/cached/<branch>')
+@app.route('/api/cached/<branch>')
 def cached(branch):
     """TODO: Docstring for index.
     :returns: TODO
@@ -21,7 +19,7 @@ def cached(branch):
         text = loads(my_file.read())
         return text
 
-@app.route('/fetch/<branch>')
+@app.route('/api/fetch/<branch>')
 def latest(branch):
     branch = branch.upper()
     ret = Logger(branch)

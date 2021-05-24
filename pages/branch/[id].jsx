@@ -15,7 +15,7 @@ const Post = ({ initialData }) => {
 
     const fetchData = async () => {
         setIsLoading(true);
-        const res = await fetch(`http://127.0.0.1:5000/fetch/${id}`)
+        const res = await fetch(`http://127.0.0.1:5000/api/fetch/${id}`)
             .then((res) => res.json())
             .catch((rejected) => {
                 console.log(rejected);
@@ -57,7 +57,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-    const res = await fetch(`http://127.0.0.1:5000/${params.id}`);
+    const res = await fetch(`http://127.0.0.1:5000/api/cached/${params.id}`);
     const initialData = await res.json();
     return {
         props: {
