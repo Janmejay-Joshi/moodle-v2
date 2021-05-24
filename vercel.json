@@ -1,9 +1,15 @@
 {
+    "version": 2,
     "builds": [
         {
-            "src": "./index.py",
+            "src": "/api/index.py",
             "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/cached/air_a",
+            "dest": "api/cached/air_a"
         }
     ]
 }
-
