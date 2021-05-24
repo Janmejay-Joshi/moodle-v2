@@ -2,13 +2,15 @@ import styles from "./Card.module.scss";
 
 const Card = (props) => {
     return (
-        <div
-            className={styles.card}
-            style={
-                props.due ? { "border": "solid thick red" } : { border: "solid thick green" }
-            }
-        >
-            <a href={props.link} target="_blank" rel="noopener noreferrer">
+        <a href={props.link} target="_blank" rel="noopener noreferrer">
+            <div
+                className={styles.card}
+                style={
+                    props.due
+                        ? { border: "solid thick red" }
+                        : { border: "solid thick green" }
+                }
+            >
                 <div className={styles.card_head}>
                     {props.subject.toUpperCase()}
                 </div>
@@ -19,8 +21,8 @@ const Card = (props) => {
                         <li>{props.time_left}</li>
                     </ul>
                 </div>
-            </a>
-        </div>
+            </div>
+        </a>
     );
 };
 
