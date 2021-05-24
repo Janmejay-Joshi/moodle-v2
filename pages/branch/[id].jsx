@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Header from "../../components/Header";
 import CardGrid from "../../components/CardGrid";
