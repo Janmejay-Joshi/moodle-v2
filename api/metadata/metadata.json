@@ -18,5 +18,6 @@
         "http://op2020.mitsgwalior.in/course/view.php?id=294",
         "http://op2020.mitsgwalior.in/course/view.php?id=44"
     ],
-    "CSE": []
+    "CSE": [],
+    "ECE": ["http://op2020.mitsgwalior.in/course/view.php?id=149"]
 }

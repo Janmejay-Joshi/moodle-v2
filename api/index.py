@@ -2,8 +2,11 @@ from flask import Flask
 from Logger import Logger
 from json import loads
 from apscheduler.schedulers.background import BackgroundScheduler
+from flask import Flask
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def index():
