@@ -34,11 +34,9 @@ const Post = ({ initialData }) => {
             <div className={styles.container}>
                 <div className={styles.head}>
                     <button onClick={handleClick}>
-                        {isLoading ? "Loading ..." : data.last_updated}
                     </button>
                 </div>
                 <main className={styles.main}>
-                    <CardGrid details={data.data.assignments} />
                 </main>
             </div>
         </>
