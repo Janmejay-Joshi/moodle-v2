@@ -15,7 +15,7 @@ const Post = ({ initialData }) => {
 
     const fetchData = async () => {
         setIsLoading(true);
-        const res = await fetch(`https://node-echo-api.now-examples.vercel.app/api/?name=examples`)
+        const res = await fetch(`http://127.0.0.1:5000/fetch/${id}`)
             .then((res) => res.json())
             .catch((rejected) => {
                 console.log(rejected);
@@ -34,9 +34,11 @@ const Post = ({ initialData }) => {
             <div className={styles.container}>
                 <div className={styles.head}>
                     <button onClick={handleClick}>
+                        {isLoading ? "Loading ..." : data.last_updated}
                     </button>
                 </div>
                 <main className={styles.main}>
+                    <CardGrid details={data.data.assignments} />
                 </main>
             </div>
         </>
@@ -55,7 +57,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-    const res = await fetch(`https://node-echo-api.now-examples.vercel.app/api/?name=example`);
+    const res = await fetch(`http://127.0.0.1:5000/${params.id}`);
     const initialData = await res.json();
     return {
         props: {
