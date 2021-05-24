@@ -15,12 +15,12 @@ export default function Home() {
             <Header />
             <div className={styles.container}>
                 <div className={styles.head}>
-                    <Link href="/air_a">
+                    <Link href="/branch/air_a">
                         <div className={styles.branch}>
                             <a>AIR Group A</a>
                         </div>
                     </Link>
-                    <Link href="/air_b">
+                    <Link href="/branch/air_b">
                         <div className={styles.branch}>
                             <a>AIR Group B</a>
                         </div>
