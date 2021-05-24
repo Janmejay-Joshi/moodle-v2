@@ -14,10 +14,10 @@ def index():
     :returns: TODO
 
     """
-    return "Instead Try /air_a or /air_b" 
+    return "Instead Try /cached/air_a or /cached/air_b" 
 
-@app.route('/<branch>')
-def old(branch):
+@app.route('/cached/<branch>')
+def cached(branch):
     """TODO: Docstring for index.
     :returns: TODO
 
