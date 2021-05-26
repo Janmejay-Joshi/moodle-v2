@@ -44,7 +44,7 @@ const Post = ({ initialData }) => {
         </>
     );
 };
-
+/*
 export async function getStaticPaths() {
     return {
         paths: [
@@ -55,8 +55,9 @@ export async function getStaticPaths() {
         fallback: false, // See the "fallback" section below
     };
 }
+*/
 
-export async function getStaticProps({params}) {
+export async function getServerSideProps({params}) {
     const res = await fetch(`https://moodle-api.vercel.app/cached/${params.id}`);
     const initialData = await res.json();
     return {
