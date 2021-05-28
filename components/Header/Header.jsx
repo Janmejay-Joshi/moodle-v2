@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import styles from "./Header.module.scss";
 import Sidebar from "./Sidebar.jsx";
+import Link from "next/link";
 
 const Header = (props) => {
     const [isActiveSidebar, setSidebar] = useToggle();
