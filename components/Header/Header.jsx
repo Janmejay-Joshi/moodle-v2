@@ -10,12 +10,10 @@ const Header = (props) => {
             <header>
                 <nav className={styles.nav}>
                     <div className={styles.nav_brand}>
-                    <Link href="/">
-                        <a>Asinger</a>
+                        <a href="https://moodle-v2.vercel.app/">Asinger</a>
                         <span>
                             <a>| JJ</a>
                         </span>
-                    </Link>
                     </div>
                 </nav>
             </header>
