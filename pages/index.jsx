@@ -25,6 +25,11 @@ export default function Home() {
                             <a>AIR Group B</a>
                         </div>
                     </Link>
+                    <Link href="/branch/ece">
+                        <div className={styles.branch}>
+                            <a>ECE</a>
+                        </div>
+                    </Link>
                 </div>
                 <main className={styles.main}></main>
             </div>

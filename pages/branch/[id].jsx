@@ -15,7 +15,7 @@ const Post = ({ initialData }) => {
 
     const fetchData = async () => {
         setIsLoading(true);
-        const res = await fetch(`https://moodle-api.vercel.app/fetch/${id}`)
+        const res = await fetch(`https://7qoju2.deta.dev/fetch/${id}`)
             .then((res) => res.json())
             .catch((rejected) => {
                 console.log(rejected);
@@ -44,21 +44,9 @@ const Post = ({ initialData }) => {
         </>
     );
 };
-/*
-export async function getStaticPaths() {
-    return {
-        paths: [
-            { params: { id: "air_a" } },
-            { params: { id: "air_b" } },
-            { params: { id: "ece" } },
-        ],
-        fallback: false, // See the "fallback" section below
-    };
-}
-*/
 
 export async function getServerSideProps({params}) {
-    const res = await fetch(`https://moodle-api.vercel.app/cached/${params.id}`);
+    const res = await fetch(`https://7qoju2.deta.dev/cached/${params.id}`);
     const initialData = await res.json();
     return {
         props: {
