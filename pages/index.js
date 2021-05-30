@@ -14,7 +14,7 @@ export default function Home() {
         <>
             <Header />
             <div className={styles.container}>
-                <div className={styles.head}>
+                <div className={styles.main}>
                     <Link href="/branch/air_a">
                         <div className={styles.branch}>
                             <a>AIR Group A</a>
@@ -31,7 +31,6 @@ export default function Home() {
                         </div>
                     </Link>
                 </div>
-                <main className={styles.main}></main>
             </div>
         </>
     );
