@@ -92,4 +92,7 @@
         border: solid $C-900;
         border-radius: 100px;
     }
+    @media screen and (max-width: 400px){
+        opacity: 0;
+    }
 }
