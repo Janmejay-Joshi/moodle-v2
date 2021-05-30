@@ -18,16 +18,26 @@
         margin: 10rem;
         max-height: 3rem;
         max-width: 800px;
+        min-width: 200px;
         flex: 1;
+    
+    @media screen and (max-width: 400px) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+        align-self: center;
+        margin: 1rem;
+
     }
-}
+}}
 
 .branch {
-    flex:1;
+    flex: 1;
     font-size: 40px;
     padding: 5rem;
     justify-content: center;
-    border: solid thin white;
+    border: solid thin $C-600;
 }
 
 .main {
@@ -35,3 +45,15 @@
     flex: auto;
 }
 
+@media screen and (max-width: 400px) {
+    .head {
+        flex-direction: column;
+        min-height: 200px;
+        max-height: 250px;
+    }
+    .branch {
+        font-size: 30px;
+        max-height: 2rem;
+        padding: 5rem;
+    }
+}

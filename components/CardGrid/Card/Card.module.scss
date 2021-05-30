@@ -52,4 +52,7 @@ $animation-time: 0.4s;
             }
         }
     }
+    @media screen and (max-width: 400px){
+        min-height: 250px;
+    }
 }

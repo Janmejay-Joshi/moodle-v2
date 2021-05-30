@@ -5,4 +5,8 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 390px));
     grid-auto-rows: minmax(100px, 550px);
     gap: 2rem;
+
+    @media screen and (max-width: 400px) {
+        grid-auto-rows: minmax(100px, 250px);
+    }
 }
