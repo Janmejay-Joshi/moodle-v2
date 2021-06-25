@@ -1,7 +1,7 @@
-import { useCallback, useState } from "react";
-import styles from "./Header.module.scss";
-import Sidebar from "./Sidebar.jsx";
-import Link from "next/link";
+import { useCallback, useState } from 'react';
+import styles from './Header.module.scss';
+import Sidebar from './Sidebar.jsx';
+import Link from 'next/link';
 
 const Header = (props) => {
     const [isActiveSidebar, setSidebar] = useToggle();
@@ -10,7 +10,7 @@ const Header = (props) => {
             <header>
                 <nav className={styles.nav}>
                     <div className={styles.nav_brand}>
-                        <a href="https://moodle-v2.vercel.app/">Asinger</a>
+                        <a href="https://moodle-v2.vercel.app/">Assignments</a>
                         <span>
                             <a>| JJ</a>
                         </span>

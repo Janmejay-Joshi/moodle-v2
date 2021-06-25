@@ -12,6 +12,7 @@
     justify-content: center;
     min-height: 400px;
     border-bottom: solid thin $C-100;
+    padding: 2rem;
 
     button {
         font-size: 40px;
@@ -31,6 +32,13 @@
 
     }
 }}
+
+.update {
+    font-size: 40px;
+    span {
+        color: hotpink;
+    }
+}
 
 .branch {
     flex: 1;
