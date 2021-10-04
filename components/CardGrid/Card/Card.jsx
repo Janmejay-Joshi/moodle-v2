@@ -7,8 +7,8 @@ const Card = (props) => {
   let difference = Math.round((old.getTime() - today.getTime()) / (1000 * 60));
   difference =
     Math.abs(difference) > 60 * 24
-      ? ` ${Math.round(difference / (60 * 24)) - 1} Days ${Math.abs(
-          Math.round((difference / 60) % 24) - 1
+      ? ` ${Math.round(difference / (60 * 24))} Days ${Math.abs(
+          Math.round((difference / 60) % 24)
         )} Hours ${Math.abs(difference % 60)} minutes`
       : Math.abs(difference) > 60
       ? `${Math.round(difference / 60)} Hours ${Math.abs(
