@@ -32,7 +32,7 @@ const Post = ({initialData}) => {
 };
 
 export async function getServerSideProps({params}) {
-  const res = await fetch(`https://7qoju2.deta.dev/cached/${params.id}`);
+  const res = await fetch(`https://dxx8aa.deta.dev/get/${params.id}`);
   const initialData = await res.json();
   return {
     props: {
