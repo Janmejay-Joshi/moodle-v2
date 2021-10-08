@@ -5,8 +5,6 @@ const Card = (props) => {
   const old = new Date(props.due_date);
 
   let difference = Math.round((old.getTime() - today.getTime()) / (1000 * 60));
-  
-  console.log(difference)
 
   difference =
     Math.abs(difference) > (60 * 24)
