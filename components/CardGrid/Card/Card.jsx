@@ -5,16 +5,20 @@ const Card = (props) => {
   const old = new Date(props.due_date);
 
   let difference = Math.round((old.getTime() - today.getTime()) / (1000 * 60));
+  
+  console.log(difference)
+
   difference =
-    Math.abs(difference) > 60 * 24
-      ? ` ${Math.round(difference / (60 * 24))} Days ${Math.abs(
-          Math.round((difference / 60) % 24)
+    Math.abs(difference) > (60 * 24)
+      ? ` ${Math.floor(difference / (60 * 24))} Days ${Math.abs(
+          Math.floor((difference / 60) % 24)
         )} Hours ${Math.abs(difference % 60)} minutes`
       : Math.abs(difference) > 60
-      ? `${Math.round(difference / 60)} Hours ${Math.abs(
+      ? `${Math.floor(difference / 60)} Hours ${Math.abs(
           difference % 60
         )} minutes`
       : `${difference} minutes`;
+
 
   return (
     <a href={props.link} target="_blank" rel="noopener noreferrer">

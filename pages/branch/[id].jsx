@@ -9,10 +9,18 @@ const Post = ({initialData}) => {
 
   const old = new Date(data.last_updated);
   let difference = Math.round((today.getTime() - old.getTime()) / (1000 * 60));
+
   difference =
-    difference > 60
-      ? `${Math.round(difference / 60)} Hours ${difference % 60} minutes`
+    Math.abs(difference) > (60 * 24)
+      ? ` ${Math.floor(difference / (60 * 24))} Days ${Math.abs(
+          Math.floor((difference / 60) % 24)
+        )} Hours ${Math.abs(difference % 60)} minutes`
+      : Math.abs(difference) > 60
+      ? `${Math.floor(difference / 60)} Hours ${Math.abs(
+          difference % 60
+        )} minutes`
       : `${difference} minutes`;
+
 
   return (
     <>
